@@ -67,7 +67,7 @@ const processContentRow = (r) => {
 				text: r["word"]
 			})
 			// TODO: ensure there aren't blank values in return value here
-			lxx_word_data[thiswid] = ParseCodeToObject(r["morphology"])
+			lxx_word_data[thiswid] = ParseCodeToObject(r["morph"])
 			lxx_word_data[thiswid].lexeme = r["real_lemma"] ? r["real_lemma"] : r["word_root"]
 			if (r["gloss"])
 				lxx_word_data[thiswid].gloss = r["gloss"]
