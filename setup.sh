@@ -10,7 +10,7 @@ node "helpers/1. get-lxx-files.js"
 # Build output/lxx.db
 node "helpers/2. enrich-ccat-to-lxxdb.js"
 
-FILE="data/bbilecrawler.s3db"
+FILE="data/biblecrawler.s3db"
 if [ -f $FILE ]; then
     # Bring in parallel data from biblecrawler.s3db and build word_map
     node "main.js"
