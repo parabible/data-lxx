@@ -212,7 +212,6 @@ const parseFile = (lines, filename) => {
 				chapter,
 				verse,
 				word,
-				trailer: " ",
 				old_root,
 				real_lemma: extradetails.lemma,
 				lemma_key: extradetails.key,
