@@ -54,6 +54,20 @@ const bookMap = {
 	"BelOG": "Bel"
 }
 
+// THERE ARE NAMES IN HOSEA THAT DON'T CORRESPOND WELL BETWEEN THE DATA SETS
+// We're actually generating above (cf. require statement)
+// but it needs to be augmented for these names in Hosea...
+greekWordList["Οὐ-̈ἐλεέω"] = { def: "No-Mercy" }
+greekWordList["Οὐ-̈λαός-̈ἐγώ"] = { def: "Not-My-People" }
+greekWordList["Λαός-̈ἐγώ"] = { def: "My-People" }
+const names_in_hosea = [
+	"*OU)K-H)LEHME/NH         N   NSF    OU)+E)LEE/W",
+	"*OU)K-H)LEHME/NHN        N   ASF    OU)+E)LEE/W",
+	"*OU)-LAO/S-MOU           N   NSM    OU)+LAO/S+E)GW/",
+	"*LAO/S-MOU               N   NSM    LAO/S+E)GW/",
+	"*OU)-LAW=|-MOU           N   DSM    OU)+LAO/S+E)GW/"
+]
+
 const allWords = []
 let valuesToInsert = []
 const missingDefs = []
