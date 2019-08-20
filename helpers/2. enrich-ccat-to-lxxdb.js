@@ -60,12 +60,14 @@ const bookMap = {
 greekWordList["Οὐ-̈ἐλεέω"] = { def: "No-Mercy" }
 greekWordList["Οὐ-̈λαός-̈ἐγώ"] = { def: "Not-My-People" }
 greekWordList["Λαός-̈ἐγώ"] = { def: "My-People" }
+greekWordList["Ἐλεέω"] = { def: "Mercy" }
 const names_in_hosea = [
 	"*OU)K-H)LEHME/NH         N   NSF    OU)+E)LEE/W",
 	"*OU)K-H)LEHME/NHN        N   ASF    OU)+E)LEE/W",
 	"*OU)-LAO/S-MOU           N   NSM    OU)+LAO/S+E)GW/",
 	"*LAO/S-MOU               N   NSM    LAO/S+E)GW/",
-	"*OU)-LAW=|-MOU           N   DSM    OU)+LAO/S+E)GW/"
+	"*OU)-LAW=|-MOU           N   DSM    OU)+LAO/S+E)GW/",
+	"*H)LEHME/NH              VMI XPPNSF E)LEE/W"
 ]
 
 const allWords = []
