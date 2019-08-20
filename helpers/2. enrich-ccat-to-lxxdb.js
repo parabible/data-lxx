@@ -345,7 +345,7 @@ const completeProcess = () => {
 	console.log(" - writing sql file")
 	fs.writeFileSync("../output/EnrichedContent.sql", fileOutput, 'utf8')
 	console.log(" - importing to sqlite")
-	console.log("     (Sorry, this will take a while: like > 10min.")
+	console.log("     (Sorry, this might take a while: like > 10min on an HDD.")
 	console.log("      And there's not going to be any indication")
 	console.log("      it's succeeding so just trust me and wait)")
 	let stdout = execSync('sqlite3 ../output/lxx.db < ../output/EnrichedContent.sql')
