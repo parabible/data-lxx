@@ -119,7 +119,6 @@ const fix_caps = betacode => {
 	if (betacode[0] !== '*')
 		return betacode
 	const m = betacode.match(/\*(\w)(\W*)(.+)/)
-	console.log(betacode, m)
 	return "*" + m[2] + m[1] + m[3]
 }
 
@@ -223,8 +222,6 @@ const parseFile = (lines, filename) => {
 				console.log(primaryKey, secondaryKey, word_in_verse, word)
 			}
 			if (names_in_hosea.includes(line)) {
-				console.log(line)
-				console.log(chapter, verse, word, old_root)
 				word_in_verse_offset += line.substring(0, 25).split("-").length - 1
 				let lemma = old_root[0].toUpperCase() + old_root.replace(/\ /g, "-").slice(1)
 				extradetails = {
