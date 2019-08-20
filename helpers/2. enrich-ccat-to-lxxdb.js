@@ -230,7 +230,7 @@ const parseFile = (lines, filename) => {
 
 			allWords.push(wordDetails)
 			// valuesToInsert.push(wordDetails)
-			// valuesToInsert.append("(\'" + str(count) + "\', \'" + book_name + "\', \'" + str(chapter_nr) + "\', \'" + str(verse_nr) + "\', \'" +  str(word_nr) + "\', \'" + word + "\', \'" + root_word + "\', \'" + morphology + "\')")
+			// valuesToInsert.append("(\'" + str(count) + "\', \'" + book + "\', \'" + str(chapter) + "\', \'" + str(verse) + "\', \'" +  str(word_in_verse) + "\', \'" + word + "\', \'" + root_word + "\', \'" + morphology + "\')")
 
 			// if (valuesToInsert.length >= 500) {
 			// 	bulkInsert(valuesToInsert)
@@ -243,10 +243,10 @@ const parseFile = (lines, filename) => {
 // let bulkDoneCounter = 0
 // let tableStillToBeCreated = true
 // const combinedParam = (word) => {
-// 	return `("${word["book_name"]}",
-// 		"${word["chapter_nr"]}",
-// 		"${word["verse_nr"]}",
-// 		"${word["word_nr"]}",
+// 	return `("${word["book"]}",
+// 		"${word["chapter"]}",
+// 		"${word["verse"]}",
+// 		"${word["word_in_verse"]}",
 // 		"${word["word"]}",
 // 		"${word["old_root"]}",
 // 		"${word["real_lemma"]}",
@@ -261,10 +261,10 @@ const parseFile = (lines, filename) => {
 // 			params.push(combinedParam(word))
 // 		})
 // 		const insertQuery = `INSERT INTO EnrichedContent (
-// 			book_name,
-// 			chapter_nr,
-// 			verse_nr,
-// 			word_nr,
+// 			book,
+// 			chapter,
+// 			verse,
+// 			word_in_verse,
 // 			word,
 // 			old_root,
 // 			real_lemma,
@@ -299,10 +299,10 @@ const sqlFile = `
 DROP TABLE IF EXISTS EnrichedContent;
 CREATE TABLE EnrichedContent (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		book_name TEXT NOT NULL,
-		chapter_nr TEXT NOT NULL,
-		verse_nr TEXT NOT NULL,
-		word_nr TEXT NOT NULL,
+		book TEXT NOT NULL,
+		chapter TEXT NOT NULL,
+		verse TEXT NOT NULL,
+		word_in_verse INTEGER NOT NULL,
 		word TEXT NOT NULL,
 		old_root TEXT NOT NULL,
 		real_lemma TEXT,
@@ -315,10 +315,10 @@ const insertValues = (wordArray) => (`
 INSERT INTO EnrichedContent VALUES
 ${wordArray.map(w => {
 	const ordered_word_values = [
-		w["book_name"],
-		w["chapter_nr"],
-		w["verse_nr"],
-		w["word_nr"],
+		w["book"],
+		w["chapter"],
+		w["verse"],
+		w["word_in_verse"],
 		w["word"],
 		w["old_root"],
 		w["real_lemma"],
