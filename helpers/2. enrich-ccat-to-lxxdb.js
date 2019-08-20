@@ -112,8 +112,16 @@ const exceptions = {
 	"Bel": { ch: 1, v: 1 }
 }
 
-let fails = []
 
+const fix_caps = betacode => {
+	if (betacode[0] !== '*')
+		return betacode
+	const m = betacode.match(/\*(\w)(\W*)(.+)/)
+	console.log(betacode, m)
+	return "*" + m[2] + m[1] + m[3]
+}
+
+let fails = []
 let count = 0
 const parseFile = (lines, filename) => {
 	// let bulkInsertCounter = 0
@@ -178,10 +186,13 @@ const parseFile = (lines, filename) => {
 			use_lemmas = true
 			word_in_verse++
 			count++
-			word = bc.betaCodeToGreek(line.substring(0, 25).trim())
-			old_root = bc.betaCodeToGreek(line.substring(36).replace(/\s+/, ' '))
-			real_lemma = bc.betaCodeToGreek(line.substring(36).replace(/\s+/, ' '))
-			lemma_key = bc.betaCodeToGreek(line.substring(36).replace(/\s+/, ' '))
+			// Capitalized words are a bit mixed up with betacode
+			const beta_word = fix_caps(line.substring(0, 25).trim())
+			const beta_root = fix_caps(line.substring(36).trim().replace(/\s+/, ' '))
+			word = bc.betaCodeToGreek(beta_word)
+			old_root = bc.betaCodeToGreek(beta_root)
+			real_lemma = bc.betaCodeToGreek(beta_root)
+			lemma_key = bc.betaCodeToGreek(beta_root)
 			morph = line.substring(25, 36).trim().replace(/\s+/, ' ')
 
 			let primaryKey = filename
