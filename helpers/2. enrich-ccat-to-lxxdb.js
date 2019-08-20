@@ -224,7 +224,7 @@ const parseFile = (lines, filename) => {
 			else {
 				missingDefs.push(extradetails.key)
 			}
-			
+
 			// 	wordDetails["real_lemma"] = extradetails.lemma
 			// if (extradetails && extradetails.hasOwnProperty("key"))
 			// 	wordDetails["lemma_key"] = extradetails.key
@@ -341,8 +341,8 @@ const completeProcess = () => {
 	const { execSync } = require('child_process')
 
 	console.log(" - building sql query")
-	const fileOutput = sqlFile + 
-						paginateArray(allWords, 999).map(wordChunk => insertValues(wordChunk)).join("")
+	const fileOutput = sqlFile +
+		paginateArray(allWords, 999).map(wordChunk => insertValues(wordChunk)).join("")
 	console.log(" - writing sql file")
 	fs.writeFileSync("../output/EnrichedContent.sql", fileOutput, 'utf8')
 	console.log(" - importing to sqlite")
