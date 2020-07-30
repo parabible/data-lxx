@@ -1,5 +1,7 @@
 # LXX DATA PIPELINE
 
+**NOTE: I'm busy working on the pipeline elsewhere so this repo is just in place for now. It'll take a while but I'm working on the data pipeline here: <https://github.com/jcuenod/parabible-data-pipeline>**
+
 Combine LXX data from wherever it can be found for use on parabible.
 
 ---
